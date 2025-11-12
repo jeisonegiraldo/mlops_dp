@@ -13,7 +13,7 @@ import os
 
 
 
-SQLALCHEMY_DATABASE_URL = "sqlite:///./test.db"
+SQLALCHEMY_DATABASE_URL = "mysql+pymysql://root:jbjpqMhkwrDmteyDakQvmbXZwlIPygvq@maglev.proxy.rlwy.net:57475/railway"
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 metadata = MetaData()
 
@@ -145,7 +145,7 @@ def predict_house(file: uploadedfile.UploadedFile = file(...),db: Session = Depe
     )
 
     predictions_df.to_sql("predictions", con=engine, if_exists="append", index=False)
-    
+
 
 
     return {"predictions": predictions.tolist()
