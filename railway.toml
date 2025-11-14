@@ -1,0 +1,10 @@
+[build]
+builder = NIXPACKS
+
+[deploy]
+startCommand = "uvicorn app:app --host 0.0.0.0 --port $PORT"
+numReplicas = 1
+healthcheckPath = "/health"
+
+healthcheckTimeout = 60
+sleepApplication = false

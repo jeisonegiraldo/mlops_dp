@@ -13,7 +13,9 @@ import os
 
 
 
-SQLALCHEMY_DATABASE_URL = "mysql+pymysql://root:jbjpqMhkwrDmteyDakQvmbXZwlIPygvq@maglev.proxy.rlwy.net:57475/railway"
+#SQLALCHEMY_DATABASE_URL = "mysql+pymysql://root:jbjpqMhkwrDmteyDakQvmbXZwlIPygvq@maglev.proxy.rlwy.net:57475/railway"
+SQLALCHEMY_DATABASE_URL = os.environ["SQLALCHEMY_DATABASE_URL"]
+
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 metadata = MetaData()
 
